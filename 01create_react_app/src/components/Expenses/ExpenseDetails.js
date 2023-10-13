@@ -1,5 +1,5 @@
 import  './ExpenseItem.css'
-function ExpenseDetails ({amount , title , LocationOfExpenditure}){
+const ExpenseDetails =  ({amount , title , LocationOfExpenditure}) =>{
   return (
     <div className="expense-item__description">
       <h2>{title}<span>({LocationOfExpenditure})</span></h2>
