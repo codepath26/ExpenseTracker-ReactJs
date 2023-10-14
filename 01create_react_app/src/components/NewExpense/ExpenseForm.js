@@ -4,16 +4,38 @@ const ExpenseForm = ()=>{
   const [ enteredTitle , setEnteredTitle] = useState('');
   const [ enteredDate , setEnteredDate] = useState('');
   const [ enteredAmount , setEnteredAmount] = useState('');
+  // const [userInput , setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount:'',
+  //   enteredDate: ''
+  // })
   const titleChangeHandler = (e)=>{
-    console.log("before title change" ,enteredTitle)
     setEnteredTitle(e.target.value);
-    console.log("After" ,enteredTitle)
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: e.target.value,
+    // })
+    
+    // another safer way to use the updation
+
+    // setUserInput ( (prevState)=>{
+    //   return {...prevState , enteredTitle : e.target.value};
+    // })
+   
   }
   const dateChangeHandler = (e)=>{
     setEnteredDate(e.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: e.target.value,
+    // })
   }
   const amountChangeHandler = (e)=>{
     setEnteredAmount(e.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredAmount: e.target.value,
+    // })
   }
 return <form>
   <div className="new-expense__controls">
