@@ -19,18 +19,21 @@ const Expenses =({expenses})=>{
  console.log(expenses)
  setExpenses(updatedExpenses);
   }
+  const filteredExpenses = expenses.filter(expense =>{
+    return expense.date.getFullYear().toString() === filteredYear;
+  })
   return (
    <Cart className='expenses'>
     <ExpenseFilter selected={filteredYear} onChangeFilter = {filterChangeHandler}/>
   {
-    expenses.map((expense , index)=>(
+    filteredExpenses.map((expense , index)=>(
       <ExpenseItem 
-       key={index}
+       key={expense.id}
        index = {index}
        title ={expense.title} 
        amount={expense.amount} 
        date={expense.date} 
-       LocationOfExpenditure ={expense.LocationOfExpenditure}
+      //  LocationOfExpenditure ={expense.LocationOfExpenditure}  
        onDeleteExpense = {deleteExpenseHandler}
        />
     ))
