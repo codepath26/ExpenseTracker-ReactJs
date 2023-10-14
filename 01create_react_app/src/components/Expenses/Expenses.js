@@ -44,6 +44,8 @@ const Expenses = ({ expenses }) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
+      {filteredExpenses.length === 1 && <p>Only single Expense here. Please add more...
+</p>}
       {expensesContent};
     </Cart>
   );
